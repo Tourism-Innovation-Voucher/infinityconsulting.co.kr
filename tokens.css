@@ -1,0 +1,48 @@
+/* Infinity Consulting — dark-ground tokens for the company site hero.
+   Extension of docs/ui-design-palette.md ("Dark-ground extension"). The console
+   tokens (paper/ink/bronze) stay authoritative for the application; these exist
+   only because the official lockup is a white wordmark on a dark ground, and the
+   marketing hero is that ground. Every value here is derived from an existing
+   token or from the corporate mark; none is a new hue. */
+:root {
+  /* ground and sky: ink and its shades, warmed toward the horizon */
+  --night:   #16181B;  /* = --ink. Zenith, page base, text ground */
+  --ground:  #111316;  /* ink darkened ~15% for terrain; sits below the sky */
+  --smoke:   #2A211C;  /* ink pulled toward hue 37° at low chroma; mid sky */
+  --ember:   #4A2A14;  /* bronze darkened; the horizon band */
+
+  /* the mark, and only the mark (brand rule: gradient lives inside the logo) */
+  --sun:     #FBD734;
+  --amber:   #F4A254;
+  --flame:   #E94B39;
+  --mark-gradient: linear-gradient(118deg, var(--sun) 0%, var(--amber) 48%, var(--flame) 100%);
+
+  /* light the mark casts on the terrain: never a fill, only spill at low alpha */
+  --spill:   rgb(244 162 84 / 0.28);
+  --spill-2: rgb(244 162 84 / 0.10);
+  --horizon: rgb(244 162 84 / 0.35);  /* the thin line where sky meets ridge */
+
+  /* type on dark */
+  --paper:   #FAF9F7;  /* = --paper. Headline, primary text  (16.9:1 on night) */
+  --paper-2: #C8C6C0;  /* = --rule reused as secondary text  (10.4:1) */
+  --paper-3: #8E9095;  /* muted captions                     ( 5.6:1) */
+
+  /* accent on dark: bronze lifted in lightness only, same hue */
+  --bronze-l:   #C99A55;                /* focus ring, current nav, link (7.0:1) */
+  --bronze-l-t: rgb(201 154 85 / 0.16); /* selected / hover background on night; never a badge */
+
+  /* geometry and type stay designated */
+  --font-ui: "IBM Plex Sans KR", system-ui, sans-serif;
+  --radius-control: 3px;
+  --radius-surface: 5px;
+  --display-1: clamp(40px, 6vw, 84px);
+  --display-2: clamp(28px, 3.6vw, 48px);
+  --lead: 18px;
+  --body: 16px;
+  --nav: 13px;
+
+  /* the one motion moment */
+  --rise-duration: 1600ms;
+  --rise-ease: cubic-bezier(.2,.7,.2,1);
+  --idle-period: 14s;
+}
